@@ -59,20 +59,37 @@ public class Recursion {
     }
 
     public static void checkSorted(int[] arr, int n, int i) {
-        if(i == n-1){
+        if (i == n - 1) {
             System.out.println("Array is sorted");
             return;
         }
         if (arr[i] >= arr[i + 1]) {
-            System.out.println("Array is not sorted");
+            System.out.println("Array is not sorted(strictly increasing)");
             return;
-        } 
+        }
         checkSorted(arr, n, i + 1);
     }
 
-   public static void main(String[] args) {
+    public static int binarySearch(int low, int high, int key, int[] arr) {
+        if (low <= high) {
+            int mid = (low + high) / 2;
+            if (key == arr[mid]) {
+                return mid;
+            } else if (arr[mid] > key) {
+                return binarySearch(low, high - 1, key, arr);
+            } else if (arr[mid] < key) {
+                return binarySearch(low + 1, high, key, arr);
+            } else {
+                return -1;
+            }
+        }else{
+            return -1;
+        }
+    }
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+
         ///-----------------------------------find sum of first n natural numbers----------------------------------
  
         // System.out.print("Enter a number upto which you want to find the sum : ");
@@ -123,5 +140,31 @@ public class Recursion {
         // System.out.print("Enter the number of disks : ");
         // int n = sc.nextInt();
         // towerOfHanoi(n, "S", "H", "D");
+
+
+        /// ---------------------------------check whether an array is sorted(strictly increasing)----------------------------
+        
+        // System.out.print("Enter the size of array : ");
+        // int n = sc.nextInt();
+        // int[] arr = new int[n];
+        // System.out.println("Enter elements in array");
+        // for (int i = 0; i < n; i++) {
+        //     arr[i] = sc.nextInt();
+        // }
+        // checkSorted(arr, n, 0);
+
+
+        ///----------------------------------------binary search-------------------------------------------
+        
+        int[] arr = {3, 6, 14, 29, 45, 96, 101};
+        System.out.print("Enter the element you want to find : ");
+        int key = sc.nextInt();
+        int position = binarySearch(0, arr.length, key, arr);
+        if (position == -1) {
+            System.out.println("Element not found");
+        } else {
+            System.out.println("Element found at index " + position);
+        }
+
     }
 }
