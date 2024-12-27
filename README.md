@@ -15,8 +15,13 @@ This repository contains examples of basic recursion techniques implemented in J
 - **Check Sorted**: Verifies if a given array is sorted.
 - **Binary Search**: Checks for an element in a sorted array.
 
-### **2. Upcoming Examples**
-- Recursion examples involving strings (to be added soon).
+### **2. String-Based Recursion Examples**
+- **Reverse a string**: Input a string and it will reverse the entire string.
+- **Find first and last occurrence**: Input a string and element and this function will return te first and last index of that element.
+- **Move characters**: All the occurrences of character entered will be moved to the last in the string.
+- **Subsequence**: It will print all the subsequence of the given string.
+- **Unique Subseuqnce**: It will remove the subsequences which are duplicates.
+- **Keypad combination**: Generates all possible combinations of characters based on a digit-to-letters mapping (like a mobile keypad). **For example**, for the input "23", it outputs combinations like dg, dh, di, eg, eh, ei, fg, fh, fi
 
 ## How to Use
 
