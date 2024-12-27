@@ -13,6 +13,7 @@ This repository contains examples of basic recursion techniques implemented in J
   - Optimized approach (stack height = `log y`).
 - **Tower of Hanoi**: Solves the Tower of Hanoi puzzle for `n` disks.
 - **Check Sorted**: Verifies if a given array is sorted.
+- **Binary Search**: Checks for an element in a sorted array.
 
 ### **2. Upcoming Examples**
 - Recursion examples involving strings (to be added soon).
