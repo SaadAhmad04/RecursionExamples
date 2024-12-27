@@ -72,20 +72,18 @@ public class Recursion {
 
     public static int binarySearch(int low, int high, int key, int[] arr) {
         if (low <= high) {
-            int mid = (low + high) / 2;
+            int mid = low + (high - low) / 2; // Avoid overflow
             if (key == arr[mid]) {
                 return mid;
-            } else if (arr[mid] > key) {
-                return binarySearch(low, high - 1, key, arr);
-            } else if (arr[mid] < key) {
-                return binarySearch(low + 1, high, key, arr);
+            } else if (key < arr[mid]) {
+                return binarySearch(low, mid - 1, key, arr); // Search in left half
             } else {
-                return -1;
+                return binarySearch(mid + 1, high, key, arr); // Search in right half
             }
-        }else{
-            return -1;
         }
+        return -1; // Key not found
     }
+    
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
